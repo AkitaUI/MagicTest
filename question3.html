@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вопрос номер 3</title>
+  <style>
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        html, body {
+        background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+        background-size: cover;
+        }   
+        .text-container {
+            width: 80%;
+            max-width: 1000px; /* необязательно, но делает текст удобнее читаемым */
+            margin: 0 auto;   /* центрирование по горизонтали */
+            font-size: 25px;  
+            }
+        .choice-button {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px auto; /* отступ между кнопками */
+            display: block;
+            background-color: rgb(255, 252, 233);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .choice-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .choice-button strong {
+            font-size: 25px; /* немного больше */
+        }
+
+        .choice-button p {
+            font-size: 15px;
+            margin: 10px 0 0 0;
+        }
+
+        .question-container {
+            background: rgb(255, 252, 233); /* белый с лёгкой прозрачностью */
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+            .text-container p {
+            font-size: 22px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="question-container">
+    <h2>Вопрос номер 3</h2>
+        <div class="text-container">
+            <p>
+            Мы смогли понять, где вы находитесь, но... Что насчёт вас самих? Кто вы такой?
+            </p>
+        </div>
+    </div>
+  <button class="choice-button" onclick="answerQuestion([['огонь', 3]], 'question4.html')">
+  <div style="text-align: left;">
+    <strong style="font-size: 20px;">1. Я скорее творец, воин, духовный искатель, защитник и руководитель.</strong>
+    <br>
+    <p>Сильный, целеустремленный. Иногда могу быть либо очень эгоистичными, либо бескорыстными. Мне кажется у меня быстрый обмен веществ, подвижный ум, но могу быть агрессивным.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="answerQuestion([['воздух', 3]], 'question4.html')">
+  <div style="text-align: left;">
+    <strong style="font-size: 20px;">2. Мне кажется я ближе к подвижному, которому тяжело усидеть на месте.</strong>
+    <br>
+    <p>Мне правда нравится информация и все, что с ней связано. В каком-то роде я новатор, возможно в будущем законодатель моды, затейник, изобретатель. Также мне кажется временами, что со мной что-то не так. Голова работает... Как будто не так как нужно, как у других. Но в то же время ум у меня быстрый, легко схватываю информацию, анализирую её. Могу быть поверхностным временами. Много целей. Склонен к потере... Некоего баланса в жизни.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="answerQuestion([['вода', 3]], 'question4.html')">
+  <div style="text-align: left;">
+    <strong style="font-size: 20px;">3. Я часто полагаюсь на интуицию, бываю чувствительным и эмоциональным.</strong>
+    <br>
+    <p>Чувствую невероятную тягу к удовольствиям, особенно физическим. Думаю я творческая личность, особенно проявлено это в музыке. Могу понимать других без слов, предчувствовать что-то. Не очень хорошо, но... Я обидчивый и склонен копить в себе воспоминания, не только хорошие. Привлекателен, мне говорят, что подкупаю своей загадочностью. Могу быть молчалив и казаться замкнутым.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="answerQuestion([['земля', 3]], 'question4.html')">
+  <div style="text-align: left;">
+    <strong style="font-size: 20px;">4. Я практичен и прямолинеен.</strong>
+    <br>
+    <p>Как правило мне говорят, что со мной легко общаться, потому что четко и ясно говорю то, чего хочу. Цели в основном материальные. Нет или незначительная тяга к духовным знаниям. Почему-то кажется, что я, по сравнению с другими, чрезмерно люблю или роскошь, или, наоборот, простые вещей, привязываюсь к семейным ценностям ещё. Лучше других, на мой взгляд, приспособлен к современной жизни. Готов трудиться, причем много. Лучший отдых — в кругу семьи, когда стол накрыт вкусной едой, а ноги — в тепле. Разумный подход ко всему.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="answerQuestion([['пространство', 1], ['время', 1], ['истинность', 1]], 'question4.html')">
+  <div style="text-align: left;">
+    <strong style="font-size: 20px;">5. Мне кажется... Я не отсюда.</strong>
+    <br>
+    <p>Как будто я либо смесь всех предшествующих вариантов, либо вообще ни один из них. Большая часть нигде не сходится, даже на чуть-чуть... Я точно существую?</p>
+  </div>
+</button><br>
+</body>
+</html>
