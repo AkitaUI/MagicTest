@@ -93,11 +93,18 @@
   </div>
 
   <script>
+    const magicTypes = [
+      "огонь", "вода", "земля", "воздух",
+      "свет", "тьма", "пространство", "время",
+      "жизнь", "смерть", "некромантия", "предсказательства",
+      "ментальная", "природа", "кровь", "истинность", "иллюзия"
+    ];
+
     const magicGroups = {
-      "Стихийная магия": ["огонь", "вода", "воздух", "земля", "производные"],
+      "Стихийная магия": ["огонь", "вода", "воздух", "земля"],
       "Стихийная нейтрального аспекта": ["пространство", "время", "истинность"],
-      "Тёмная магия": ["тьма", "некромантия", "кровь", "тень"],
-      "Психическая магия": ["ментальная", "иллюзии", "предсказания", "другое"],
+      "Тёмная магия": ["тьма", "некромантия", "кровь", "смерть"],
+      "Психическая магия": ["ментальная", "иллюзия", "предсказательства"],
       "Светлая магия": ["природа", "жизнь", "свет"]
     };
 
@@ -106,10 +113,50 @@
     }
 
     function showResult() {
-      const container = document.getElementById("result");
-      let total = 0;
-      let html = "";
+      const resultContainer = document.getElementById("result");
 
+      const scores = magicTypes.map(type => ({
+        type,
+        value: parseInt(localStorage.getItem(type) || "0")
+      }));
+
+      scores.sort((a, b) => b.value - a.value);
+
+      const top1 = scores[0];
+      const top2 = scores[1];
+      const top3 = scores[2];
+      const maxScore = top1.value;
+
+      const topTypes = scores.filter(item => item.value === maxScore);
+
+      let resultText = "";
+
+      if (topTypes.length >= 3) {
+        resultText = `Вы обладаете <b>смешанным типом магии</b>: ${topTypes.map(t => t.type.toUpperCase()).join(", ")}`;
+      } else if (topTypes.length === 2) {
+        resultText = `Вы склонны к магии <b>${topTypes[0].type.toUpperCase()}</b> / <b>${topTypes[1].type.toUpperCase()}</b>`;
+      } else {
+        const secondPlaceValue = top2.value;
+        const diff = maxScore - secondPlaceValue;
+
+        const nearSecondPlace = scores.filter(item =>
+          item !== top1 && (maxScore - item.value) <= 1
+        );
+
+        if (diff <= 1 && nearSecondPlace.length === 1) {
+          resultText = `Вы склонны к магии <b>${top1.type.toUpperCase()}</b> / <b>${top2.type.toUpperCase()}</b>`;
+        } else if (nearSecondPlace.length >= 2) {
+          resultText = `Вы обладаете <b>смешанным типом магии</b>: ${[top1, ...nearSecondPlace].map(t => t.type.toUpperCase()).join(", ")}`;
+        } else {
+          resultText = `Ваша магия — <b>${top1.type.toUpperCase()}</b>`;
+        }
+      }
+
+      // Вставим результат
+      let html = `<p>${resultText}</p><br>`;
+
+      // Разделим по группам, как было
+      let total = 0;
       for (const [groupName, types] of Object.entries(magicGroups)) {
         html += `<h3>${groupName}:</h3><ul>`;
         types.forEach(type => {
@@ -121,7 +168,8 @@
       }
 
       html += `<hr><strong class="total">Общая сумма баллов: ${total}</strong>`;
-      container.innerHTML = html;
+
+      resultContainer.innerHTML = html;
     }
   </script>
 </body>
