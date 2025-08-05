@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вопрос номер 2</title>
+  <style>
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        html, body {
+            background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }   
+        .text-container {
+            font-size: 45px;  
+        }
+        .choice-button {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px auto; /* отступ между кнопками */
+            display: block;
+            background-color: rgb(255, 252, 233);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .choice-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .choice-button strong {
+            font-size: 45px; /* немного больше */
+            line-height: 1.2;
+
+        }
+
+        .choice-button p {
+            font-size: 35px;
+            margin: 10px 0 0 0;
+        }
+
+        .question-container {
+            background: rgb(255, 252, 233);
+            padding: 40px; /* Увеличен padding, чтобы дать равные отступы */
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Теперь выравнивание текста будет тут */
+        }
+
+        .question-container h1 {
+            text-align: center; /* Только заголовок по центру */
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #confirmationModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(240, 235, 200); /* чуть темнее фона основного вопроса */
+            border: 2px solid rgb(150, 140, 100); /* ещё более тёмная граница */
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            font-size: 34px;
+            font-family: inherit;
+            z-index: 1000;
+        }
+
+        #confirmationModal.hidden {
+            display: none;
+        }
+
+        #modalOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        #confirmationModal button {
+            margin: 10px;
+            font-size: 30px;
+            padding: 10px 20px;
+            background-color: #e2e1ab;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #confirmationModal button:hover {
+            background-color: #5e1ba8;
+            color: white;
+        }
+        .choice-button p,
+        .text-container p {
+            font-size: 35px;
+            line-height: 1.2;
+            margin: 0;
+            font-family: inherit;
+        }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="question-container">
+        <h1>Вопрос номер 2</h1>
+        <div class="text-container" style="text-align: left;">
+            <p>
+            Вы не поверите, но Астрология играет важную роль в нашем мире. Астрология — это изучение звёзд и того, как они могут предсказать чью-то личность, прошлое, настоящее и будущее. Звёзды так таинственны и загадочны, скрывают так много секретов, что избежать их почти невозможно. Теперь, когда ваш мир приобрёл какой-то облик, не думаете, что небо должно чем-то озаряться? Например... Звёздами? Какое первое созвездие вы хотите видеть у себя на небосводе?
+            </p>
+        </div>
+    </div>
+
+<!-- Ответы -->
+<button class="choice-button" onclick="confirmAnswer([['тьма', 2]], 'question3.html', 1)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">1. Созвездие Дракон</strong>
+    <br>
+    <p>Считается, что созвездие Дракон – одно из наиболее больших скоплений звёзд. Входящие в состав Дракона звёзды не отличаются особой яркостью. Созвездие можно наблюдать с мая по декабрь, лучше всего — летом и осенью. По мифу, разгневанная Афина кинула змея в небо, и он остался там навсегда.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['время', 2]], 'question3.html', 2)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">2. Созвездие Цефей</strong>
+    <br>
+    <p>Форма Цефея — это неправильный пятиугольник. Наблюдается круглый год. Мифологически — это древний царь Эфиопии. Согласно астрономии, северный полюс Земли в будущем будет направлен именно на него.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['земля', 3], ['истинность', 1]], 'question3.html', 3)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">3. Созвездие Дева</strong>
+    <br>
+    <p>Символизирует богиню правосудия Дику, покинувшую человечество и поселившуюся на небе. Главная звезда — Спика. Часто изображается с пшеничным колоском в руке.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['вода', 3], ['жизнь', 3]], 'question3.html', 4)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">4. Созвездие Гидра</strong>
+    <br>
+    <p>По одной из версий, Аполлон метнул водяного змея на небо. По другой — это многоголовое чудище, побеждённое героем. Также связано с Вороном и чашей, образующими отдельные соседние созвездия.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['кровь', 1], ['свет', 1], ['некромантия', 1]], 'question3.html', 5)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">5. Созвездие Пегас</strong>
+    <br>
+    <p>Появился из крови Горгоны Медузы, когда Персей отрубил ей голову. Представляет собой квадрат с "щупальцами" из звёзд. Легендарный крылатый конь мифологии.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['иллюзия', 1], ['огонь', 2]], 'question3.html', 6)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">6. Созвездие Овен</strong>
+    <br>
+    <p>Золоторунный баран спас Фрикса и Геллу от жертвоприношения. Один из древнейших и важнейших символов в астрологии, особенно в весеннем небосводе.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['воздух', 3], ['ментальная', 1], ['иллюзия', 1]], 'question3.html', 7)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">7. Созвездие Тельца</strong>
+    <br>
+    <p>Юпитер в образе белого быка похищает Европу — одна из величайших мифологических историй. Созвездие связано с земной и небесной страстью.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['природа', 2], ['вода', 3]], 'question3.html', 8)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">8. Созвездие Близнецы</strong>
+    <br>
+    <p>Кастор и Поллукс — символ братской любви и самопожертвования. За преданность друг другу они были помещены на небо. Считаются покровителями моряков.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['природа', 1], ['тьма', 1], ['иллюзия', 1]], 'question3.html', 9)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">9. Созвездие Козерог</strong>
+    <br>
+    <p>Олицетворяет лесного бога Пана — наполовину козла, наполовину человека. Ассоциируется с природой, дикостью, музыкой и сексуальностью.</p>
+  </div>
+</button><br>
+
+<button class="choice-button" onclick="confirmAnswer([['пространство', 1], ['свет', 1]], 'question3.html', 10)">
+  <div style="text-align: left;">
+    <strong style="font-size: 40px;">10. Созвездие Лира</strong>
+    <br>
+    <p>Олицетворение музыкального инструмента Орфея. По мифу, её мелодии были столь прекрасны, что пленяли даже природу. Один из символов вдохновения.</p>
+  </div>
+</button><br>
+
+<div id="confirmationModal" class="hidden">
+    <p id="confirmationText">Вы уверены?</p>
+    <button id="confirmBtn">Подтвердить</button>
+    <button onclick="closeModal()">Отменить</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Магический тест</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content-wrapper {
+      position: relative;
+      width: fit-content;
+      min-width: min-content;
+      max-width: 800px;
+      padding: 40px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 20px;
+      z-index: 1;
+      background: rgb(255, 252, 233);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Опционально: добавить тень для красоты */
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .text-container {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 90%;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      background-color: #e2e1ab;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5e1ba8;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>
+      Тест на определение типа магии<br>
+      Разработан для ролевой Академия Ангелов и Демонов<br>
+      Проходить от лица персонажа, выбирать то, что выбрал бы ваш персонаж
+    </h1>
+    <div class="text-container">
+      <p>Пожалуйста, если вы ошиблись в выборе варианта ответа, то переройдите тест заново! Не нужно возвращаться на предыдущую страницу...</p>
+    </div>
+    <button onclick="window.location.href='question1.html'">Начать</button>
+  </div>
+</body>
+</html>

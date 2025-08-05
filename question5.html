@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вопрос номер 5</title>
+  <style>
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        html, body {
+            background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .text-container {
+            font-size: 45px;  
+        }
+
+        .choice-button {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px auto;
+            display: block;
+            background-color: rgb(255, 252, 233);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .choice-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .choice-button strong {
+            font-size: 45px;
+            line-height: 1.2;
+        }
+
+        .choice-button p {
+            font-size: 35px;
+            margin: 10px 0 0 0;
+        }
+
+        .question-container {
+            background: rgb(255, 252, 233);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .question-container h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #confirmationModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(240, 235, 200);
+            border: 2px solid rgb(150, 140, 100);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            font-size: 34px;
+            font-family: inherit;
+            z-index: 1000;
+        }
+
+        #confirmationModal.hidden {
+            display: none;
+        }
+
+        #modalOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        #confirmationModal button {
+            margin: 10px;
+            font-size: 30px;
+            padding: 10px 20px;
+            background-color: #e2e1ab;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #confirmationModal button:hover {
+            background-color: #5e1ba8;
+            color: white;
+        }
+
+        .choice-button p,
+        .text-container p {
+            font-size: 35px;
+            line-height: 1.2;
+            margin: 0;
+            font-family: inherit;
+        }
+    </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="question-container">
+        <h1>Вопрос номер 5</h1>
+        <div class="text-container" style="text-align: left;">
+            <p>
+                Это... самый последний вопрос, вы готовы? У вас есть вы, мир вокруг, наполненный самым разным, чего вы только могли пожелать. Но... для чего все это было сделано? Что-то же должно произойти? Как в книге, да? Какой-то сюжет, какое-то действие. Представьте, что вы всю жизнь прожили в своём мире. Как вам? Вам тут нравится? Или вы хотите убежать отсюда и никогда больше не вспоминать об этом месте? Представьте, что вы сейчас в... книге. Книги — это уникальная портативная магия. Вы же любите книги? Если ваш ответ отрицательный, то, надеюсь, что вы любите фильмы. Какая концовка вашей истории вам наиболее бы понравилась? Что вы хотите видеть в конце?
+            </p>
+        </div>
+    </div>
+
+    <button class="choice-button" onclick="confirmAnswer([['время', 1], ['пространство', 1]], 'result.html', 1)">
+        <strong>1. Круговая концовка</strong>
+        <p>Событие в финале повторяет событие начала с новым взглядом на произошедшее. Вы вновь ощущаете себя могущественным существом, вольным выбирать то, что будет вокруг вас...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['свет', 2], ['вода', 1]], 'result.html', 2)">
+        <strong>2. Счастливая концовка</strong>
+        <p>События в конце могут показаться другим не очень-то и счастливыми, но для вас они — истинное счастье. Вы обрели то, чего желали...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['огонь', 3]], 'result.html', 3)">
+        <strong>3. Неожиданная концовка</strong>
+        <p>Всё меняется с ног на голову. Происходит переосмысление всей жизни. Всё, чем вы жили, обретает новый смысл...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['кровь', 1], ['тьма', 1], ['тень', 1]], 'result.html', 4)">
+        <strong>4. Трагическая концовка</strong>
+        <p>Вы жертвуете собой ради других. Вас могут не помнить, но вы знаете, что дали им шанс жить...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['истинность', 1], ['некромантия', 1]], 'result.html', 5)">
+        <strong>5. Недосказанность</strong>
+        <p>История открыта. Всё ещё можно продолжить. Вы живы, вы действуете. Конец... ещё не настал.</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['земля', 2], ['предсказательства', 2]], 'result.html', 6)">
+        <strong>6. Закрытая концовка</strong>
+        <p>Всё завершено. Спокойствие, тишина. Конец истории достигнут, и вы отпускаете её с лёгкостью...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['огонь', 1], ['жизнь', 1], ['ментальная', 1]], 'result.html', 7)">
+        <strong>7. Экспрессивная открытая концовка</strong>
+        <p>Эмоции на пике. Вопросы остались. Но история настолько ярка, что вы восхищены до глубины души...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['иллюзия', 1], ['жизнь', 1]], 'result.html', 8)">
+        <strong>8. Хэппи-энд</strong>
+        <p>Баланс восстановлен. Добро торжествует. Вы — идеал, завершивший всё так, как должно было быть...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['воздух', 2], ['тень', 1]], 'result.html', 9)">
+        <strong>9. Нейтральная концовка</strong>
+        <p>История завершена спокойно. Вы наблюдаете за её финалом как за прошедшим сном, полным смыслов...</p>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['пространство', 1], ['время', 1], ['истинность', 1]], 'result.html', 10)">
+        <strong>10. Экспрессивно закрытая</strong>
+        <p>Эмоции достигают пика, инсайт, катарсис. Вы поняли суть бытия... И вот оно — настоящее завершение.</p>
+    </button><br>
+
+    <div id="confirmationModal" class="hidden">
+        <p id="confirmationText">Вы уверены?</p>
+        <button id="confirmBtn">Подтвердить</button>
+        <button onclick="closeModal()">Отменить</button>
+    </div>
+</body>
+</html>

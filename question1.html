@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вопрос номер 1</title>
+  <style>
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        html, body {
+            background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }   
+        .text-container {
+            font-size: 45px;  
+        }
+        .choice-button {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px auto; /* отступ между кнопками */
+            display: block;
+            background-color: rgb(255, 252, 233);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .choice-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .choice-button strong {
+            font-size: 45px; /* немного больше */
+            line-height: 1.2;
+
+        }
+
+        .choice-button p {
+            font-size: 35px;
+            margin: 10px 0 0 0;
+        }
+
+        .question-container {
+            background: rgb(255, 252, 233);
+            padding: 40px; /* Увеличен padding, чтобы дать равные отступы */
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Теперь выравнивание текста будет тут */
+        }
+
+        .question-container h1 {
+            text-align: center; /* Только заголовок по центру */
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #confirmationModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(240, 235, 200); /* чуть темнее фона основного вопроса */
+            border: 2px solid rgb(150, 140, 100); /* ещё более тёмная граница */
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            font-size: 34px;
+            font-family: inherit;
+            z-index: 1000;
+        }
+
+        #confirmationModal.hidden {
+            display: none;
+        }
+
+        #modalOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        #confirmationModal button {
+            margin: 10px;
+            font-size: 30px;
+            padding: 10px 20px;
+            background-color: #e2e1ab;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #confirmationModal button:hover {
+            background-color: #5e1ba8;
+            color: white;
+        }
+        .choice-button p,
+        .text-container p {
+            font-size: 35px;
+            line-height: 1.2;
+            margin: 0;
+            font-family: inherit;
+        }
+
+    </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="question-container">
+        <h1>Вопрос номер 1</h1>
+        <div class="text-container" style="text-align: left;">
+            <p>
+            Здравствуй, я приветствую тебя сегодня здесь. Где здесь? Нигде. Ты находишься нигде,
+            либо же нигде не находишься, как тебе больше нравится. Мы в твоей голове, представляешь? 
+            Сейчас здесь пусто, ничего нет. Только белый или чёрный цвет, в зависимости от того, кем 
+            ты являешься: Ангелом или Демоном. Тебе тут нравится? Скажи, что ты хочешь видеть в своём 
+            идеальном мире? Можно придумать лишь общее представление (первая строчка), но именно более 
+            чувственный образ в голове подскажет тебе истинный путь.
+            </p>
+        </div>
+    </div>
+  <button class="choice-button" onclick="confirmAnswer([['огонь', 4]], 'question2.html', 1)"><div style="text-align: left;" >
+        <strong style="font-size: 40px;">1. Это будут залитые солнцем бескрайние пёстрые от цветов луга.</strong>
+        <br>
+        <p>Они переполнены жизнью, которая течёт, не переставая, наполняя всё вокруг своей чарующей энергией, такой ласковой, нежной, но временами сильной, захлёстывающей тебя всё глубже и глубже в бурные эмоции, разрастающиеся, как лесной пожар.</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['тьма', 2]], 'question2.html', 2)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">2. Возможно это тихая широкая река где-то посреди тёмного леса?</strong>
+        <br>
+        <p>Томная, манящая, казалось бы, несгибаемая, но в то же время подвижная, изменчивая, умеющая подстраиваться под любые препятствия. В ней полно жизни, жизнь кипит в воде, как нигде иначе. Тут есть самые разнообразные животные, растения, крошечные бактерии... И всё это наедине с тобой, с твоими чувствами</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['пространство', 2], ['свет', 1], ['время', 1]], 'question2.html', 3)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">3. Бесконечное, бескрайнее мелкое розовое море?</strong>
+        <br>
+        <p>Нежное голубое небо со светлыми облаками над головой, а спереди нежно розовая гладь воды, уходящая так далеко, как только можно видеть. Вокруг тишина и лишь шум волн и порывов ветра доносятся до слуха. Мир как будто бы замер в эти самые мгновения, как ты стоишь тут и смотришь в горизонт.</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['земля', 1], ['вода', 1]], 'question2.html', 4)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">4. Удивительная горная пещера с невероятным озером?</strong>
+        <br>
+        <p>В кристально чистой воде можно увидеть отражение прохода, ведущего наружу, скорее всего, какой-то пещеры. На вид она выглядит довольно мрачно, но лучи солнца, выглядывающие с улицы, делают её немного светлее, приковывая наш взгляд. Вокруг тишина, не слышно ничего, кроме падающих с деревьев листьев.</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['время', 1], ['некромантия', 1], ['жизнь', 1]], 'question2.html', 5)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">5. Затонувший в песках храм?</strong>
+        <br>
+        <p>Сверху, из отверстия, падают лучи света на маленькое зелёное дерево и на несколько брёвен около него. Справа от него можно увидеть довольно большие горы песка у колонн. Кажется, что скоро всё будет в нём, в том числе и то маленькое деревце.</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['тьма', 2]], 'question2.html', 6)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">6. Величественный тёмный дракон?</strong>
+        <br>
+        <p>В самом низу виднеются фиолетовые кристаллы, отличающиеся друг от друга по форме. Они ведут к огромному чёрно-розовому существу с большими черными крыльями, похожего на дракона. Его чешуя похожа на броню сильного воина. Сзади него также есть кристаллы, только там они ярче и больше.</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['кровь', 2], ['воздух', 2]], 'question2.html', 7)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">7. Ожесточённое поле битвы, передающее всю суровость жизни?</strong>
+        <br>
+        <p>Повсюду разбросано огромное количество копий, некоторые из них поломанные, вероятно на этом месте происходила какая-то битва, оставившая после себя лишь море алой человеческой или не очень жидкости. Часть ярко-оранжевого неба закрыта горами. А тёмные облака придают жуткую атмосферу этому месту.</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['пространство', 1], ['время', 1], ['истинность', 1]], 'question2.html', 8)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">8. Необыкновенное фантастическое скопление целых планет?</strong>
+        <br>
+        <p>По всему периметру можно увидеть шары разного размера, похожие на планеты. Они, кажется, вместе образуют какую-то форму, центр которой похож на жерло вулкана с горящим огнём. Ближе к верху ты замечаешь, что планет практически нет, но зато есть синяя рука, похожая на человеческую, которая держит один из шаров, как повелитель этого пространства. От него веет таинственностью, божественностью...</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['некромантия', 2], ['предсказательства', 3]], 'question2.html', 9)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">9. Ночное кладбище,     навевающее жуткую атмосферу?</strong>
+        <br>
+        <p>Место здесь серое и немного мрачноватое. По всему периметру расположено огромное количество могил, одна из них привлекает к себе внимание. На ней расположена статуя существа очень похожего на человека, только имеющего крылья. Кажется, это место навевает какие-то воспоминания... Или же... Что это за чувство? Дежавю?</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['ментальная', 1]], 'question2.html', 10)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">10. Место для исследований, уютная комната с кучей интересных научных книг?</strong>
+        <br>
+        <p>За большим окном, находящимся около стола, слегка выглядывают какие-то зелёные растения. В самой же комнате находится очень много предметов, большей частью которых являются книги. Внизу, на деревянном полу, лежит небольшой красно-зелёный ковер, а в верхних углах комнаты висят растения. Находясь здесь чувствуешь атмосферу старины, такой спёртый воздух, запах старых книг, шелестящие страницы записей, где-то даже мелькает запах чернил, вероятно, когда-то пролитых на пол...</p>
+    </div></button><br>
+  <button class="choice-button" onclick="confirmAnswer([['вода', 1], ['иллюзия', 1]], 'question2.html', 11)"><div style="text-align: left;">
+        <strong style="font-size: 40px;">11. Зеледенелые зимние горы с покрытым плотной коркой озером.</strong>
+        <br>
+        <p>Холодно. Холодно настолько, что становится сложно дышать. Ледяной ветер сильно ударяет в лицо и обжигает кожу. Ты находишься далеко, так далеко-далеко от всего, чего только можно было. Здесь тихо, никого нет, лишь одинокие ёлки и могущественные снежные пики. Ты стоишь где-то в лесу, у чистого озера, как будто замершего во времени в этой замороженной реальности. Днём здесь ярко, снег хорошо отражает свет и кажется, будто всё светится, но стоит ночи опуститься на землю....то горы превращаются в жуткое, жуткое место...</p>
+    </div></button><br>
+
+    <div id="confirmationModal" class="hidden">
+        <p id="confirmationText">Вы уверены?</p>
+        <button id="confirmBtn">Подтвердить</button>
+        <button onclick="closeModal()">Отменить</button>
+    </div>
+</body>
+</html>

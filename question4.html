@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Вопрос номер 4</title>
+  <style>
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        html, body {
+            background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .text-container {
+            font-size: 45px;  
+        }
+
+        .choice-button {
+            width: 100%;
+            max-width: 800px;
+            margin: 10px auto;
+            display: block;
+            background-color: rgb(255, 252, 233);
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .choice-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .choice-button strong {
+            font-size: 40px;
+            line-height: 1.2;
+        }
+
+        .choice-button p {
+            font-size: 35px;
+            margin: 10px 0 0 0;
+        }
+
+        .question-container {
+            background: rgb(255, 252, 233);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .question-container h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #confirmationModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(240, 235, 200);
+            border: 2px solid rgb(150, 140, 100);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 80%;
+            font-size: 34px;
+            font-family: inherit;
+            z-index: 1000;
+        }
+
+        #confirmationModal.hidden {
+            display: none;
+        }
+
+        #modalOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        #confirmationModal button {
+            margin: 10px;
+            font-size: 30px;
+            padding: 10px 20px;
+            background-color: #e2e1ab;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #confirmationModal button:hover {
+            background-color: #5e1ba8;
+            color: white;
+        }
+
+        .choice-button p,
+        .text-container p {
+            font-size: 35px;
+            line-height: 1.2;
+            margin: 0;
+            font-family: inherit;
+        }
+    </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="question-container">
+        <h1>Вопрос номер 4</h1>
+        <div class="text-container" style="text-align: left;">
+            <p>
+                Кажется, ты хотя бы для себя понял своё место в мире. Теперь... Самое время наполнить его своим присутствием. Явить миру свои первые слова. Твои слова станут местным законом, правилом. Их сила распространится во все уголки. Их даже... можно приравнять к заклинанию. Но не думай, что всё так просто — мир не позволит тебе сказать что-то незначительное или простое. Он сделает это во благо вашего общего существования. Так какие они будут, твои первые слова?
+            </p>
+        </div>
+    </div>
+
+    <button class="choice-button" onclick="confirmAnswer([['время', 2], ['воздух', 2]], 'question5.html', 1)">
+      <div style="text-align: left;">
+        <strong>1. Отложенный срок волшебного дуновения</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['огонь', 1], ['некромантия', 1], ['тьма', 1]], 'question5.html', 2)">
+      <div style="text-align: left;">
+        <strong>2. Пламенная тюрьма заключённых черепов</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['вода', 1], ['огонь', 1], ['истинность', 1]], 'question5.html', 3)">
+      <div style="text-align: left;">
+        <strong>3. Ключевое значение паровой завесы</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['тень', 2], ['земля', 2], ['пространство', 1]], 'question5.html', 4)">
+      <div style="text-align: left;">
+        <strong>4. Запечатывание тёмных взглядов земли</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['кровь', 3], ['свет', 1]], 'question5.html', 5)">
+      <div style="text-align: left;">
+        <strong>5. Копья жидкого кровообращения</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['природа', 2], ['некромантия', 1], ['жизнь', 1]], 'question5.html', 6)">
+      <div style="text-align: left;">
+        <strong>6. Коса жнеца девственного леса</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['иллюзия', 3], ['ментальная', 1]], 'question5.html', 7)">
+      <div style="text-align: left;">
+        <strong>7. Открытие врат небесной бездны</strong>
+      </div>
+    </button><br>
+
+    <button class="choice-button" onclick="confirmAnswer([['ментальная', 2], ['предсказательства', 1], ['истинность', 1]], 'question5.html', 8)">
+      <div style="text-align: left;">
+        <strong>8. Жезл истинной повелевающей мыслями длани</strong>
+      </div>
+    </button><br>
+
+    <div id="confirmationModal" class="hidden">
+        <p id="confirmationText">Вы уверены?</p>
+        <button id="confirmBtn">Подтвердить</button>
+        <button onclick="closeModal()">Отменить</button>
+    </div>
+</body>
+</html>

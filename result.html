@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Результат</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url('c837cb4b4993848b0d9be7bb6f822708.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content-wrapper {
+      position: relative;
+      width: 60vmin;
+      min-height: 60vmin;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgb(255, 252, 233);
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    h1 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin: 20px 0 10px;
+    }
+
+    #result {
+      font-size: 18px;
+      width: 100%;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    strong.total {
+      display: block;
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 30px;
+      font-size: 20px;
+      padding: 12px 24px;
+      background-color: #e2e1ab;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5e1ba8;
+      color: white;
+    }
+  </style>
+</head>
+<body onload="showResult()">
+  <div class="content-wrapper">
+    <h1>Ваш результат</h1>
+    <div id="result">Загрузка...</div>
+    <button onclick="window.location.href='index.html'">Пройти заново</button>
+  </div>
+
+  <script>
+    const magicGroups = {
+      "Стихийная магия": ["огонь", "вода", "воздух", "земля", "производные"],
+      "Стихийная нейтрального аспекта": ["пространство", "время", "истинность"],
+      "Тёмная магия": ["тьма", "некромантия", "кровь", "тень"],
+      "Психическая магия": ["ментальная", "иллюзии", "предсказания", "другое"],
+      "Светлая магия": ["природа", "жизнь", "свет"]
+    };
+
+    function capitalize(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
+    function showResult() {
+      const container = document.getElementById("result");
+      let total = 0;
+      let html = "";
+
+      for (const [groupName, types] of Object.entries(magicGroups)) {
+        html += `<h3>${groupName}:</h3><ul>`;
+        types.forEach(type => {
+          const value = parseInt(localStorage.getItem(type)) || 0;
+          total += value;
+          html += `<li>${capitalize(type)}: ${value}</li>`;
+        });
+        html += `</ul>`;
+      }
+
+      html += `<hr><strong class="total">Общая сумма баллов: ${total}</strong>`;
+      container.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
